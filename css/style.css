@@ -12,14 +12,23 @@
 	--fw-reg: 400;
 	--fw-bold: 600;
 
-	--fs-h1: 2.5rem;
-	--fs-h2: 2rem;
-	--fs-h3: 1.25rem;
-	--fs-body: 1rem;
+	--fs-h1: 3rem;
+	--fs-h2: 2.5rem;
+	--fs-h3: 2rem;
+	--fs-body: 1.5rem;
 
 	--clr-accent: #364451;
 	--clr-darkaccent: #282F35;
 	--clr-white: #ffffff;
+}
+
+@media (max-width: 767px){
+	:root {
+		--fs-h1: 2rem;
+		--fs-h2: 1.75rem;
+		--fs-h3: 1.25rem;
+		--fs-body: 1rem;
+	}
 }
 
 h1 { font-size: var(--fs-h1); }
@@ -57,6 +66,34 @@ header {
 	padding: 15px;
 }
 
+.bg-darkaccent {
+	background-color: var(--clr-darkaccent);
+	color: var(--clr-white);
+}
+
+.bg-accent {
+	background-color: var(--clr-accent);
+	color: var(--clr-white);
+}
+
+.bg-white {
+	background-color: var(--clr-white);
+	color: var(--clr-darkaccent);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.divider {
+	background: url(../img/miring.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 200px;
+}
+
+
+/* NAVBAR SECTION */
 .navbar {
 	text-align: right;
 	background-color: var(--clr-darkaccent);
@@ -81,14 +118,29 @@ header {
 	background-color: rgba(255,255,255,0.6);
 	color: var(--clr-darkaccent);
 }
+/* NAVBAR SECTION */
 
+
+
+/* INTRO/LOGO SECTION */
 .intro {
 	min-height: 90vh;
+	padding: 0.1px;
 }
 
 .intro-container {
-	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr min-content 1fr;
+	margin: 0 auto;
+	padding: 0;
 	max-width: 50%;
+	min-width: 600px;
+	height: 90vh;
+}
+
+.intro-logo {
+	grid-row: 2/3;
 }
 
 .intro-img {
@@ -96,10 +148,26 @@ header {
 }
 
 .intro-subtitle {
-	font-size: 2vw;
-	padding-top: 2vh;
+	font-size: 1.7rem;
+	padding-top: 4vh;
 }
 
+.scroll-down {
+	position: relative;
+	text-align: center;
+}
+
+.scroll-down_more {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	right: 0;
+}
+/* INTRO/LOGO SECTION */
+
+
+
+/* SERVICES SECTION */
 .services {
 	padding-bottom: 10vh;
 }
@@ -122,7 +190,41 @@ header {
 .service-text {
 	margin: 0;
 }
+/* SERVICES SECTION */
 
+
+
+/* OUR WORK SECTION */
+.youtube-posts {
+	margin: 0 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+
+.youtube-post {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 42.85%;
+}
+
+.iframe-youtube-post {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+/* OUR WORK SECTION */
+
+
+
+
+/* OUR TEAMS SECTION */
 .team-container {
 	margin: 0 auto;
 	max-width: 50%;
@@ -131,27 +233,37 @@ header {
 .team-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-
-}
-
-.team-pict {
-	max-width: 75%;
-	border-radius: 100%;
+	grid-gap: 10px;
 }
 
 .team-member {
 	text-align: center;
 }
 
+.team-pict {
+	max-width: 75%;
+	border-radius: 100%;
+	background: #444;
+}
+
 .team-pos {
 	margin-top: 0;
 }
 
+/* OUR TEAMS SECTION */
+
+
+
+/* ABOUT US SECTION */
 .about-us {
 	max-width: 60%;
 	margin: 0 auto;
 }
+/* ABOUT US SECTION */
 
+
+
+/* OUR CLIENTS SECTION */
 .client-container {
 	max-width: 70%;
 	margin: 4em auto;
@@ -165,7 +277,11 @@ header {
 .client-item {
 	text-align: center;
 }
+/* OUR CLIENTS SECTION */
 
+
+
+/* CONTACT US SECTION */
 .contact-us h2.section-title, .contact-us p.section-subtitle{
 	margin: 0;
 }
@@ -176,10 +292,15 @@ header {
 }
 
 .contact-us-container {
-	max-width: 30%;
+	padding: 20px 0;
+	max-width: 50%;
 	margin: 0 auto;
 }
+/* CONTACT US SECTION */
 
+
+
+/* SOCIAL LINKS SECTION */
 .social-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -187,42 +308,84 @@ header {
 }
 
 .social-item {
+	line-height: 1;
 	text-align: center;
 	margin: 0;
 }
 
-#work {
-	height: 50vh;
+.social-item i {
+	vertical-align: bottom;
 }
+
+i#map {
+	vertical-align: initial;
+}
+
+.social-item br {
+	font-size: 1px;
+}
+
+.social-item_subtitle {
+	margin: 0;
+	font-size: 0.75rem;
+}
+/* SOCIAL LINKS SECTION */
+
 
 #team h2 {
 	margin-bottom: -.5em; 
 }
 
-.divider {
-	background: url(../img/miring.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	height: 200px;
-}
 
+/** LARGE DEVICES **/
 @media (min-width: 768px) {
 	.hidden-reg {
 		display: none;
 	}
-}
 
-@media (max-width: 767px) {
-	.intro-container {
-		max-width: 80%;
+	.team-member {
+		padding: 30px 0 0;
+		border: 2px solid black;
+		border-radius: 5px;
 	}
 
+	.team-container {
+		min-width: 600px;
+	}
+
+	.team-pos {
+		margin-top: 0;
+		font-size: 1vw !important;
+	}
+
+	.team-small {
+		padding: 20px;
+	}
+
+	h3.team-name {
+		font-size: 1.3vw !important;
+	}
+}
+
+/** MEDIUM DEVICES **/
+/*@media (min-width: 768px){
+
+}*/
+
+/** SMALL DEVICES **/
+@media (max-width: 767px) {
 	.hidden-sm {
 		display: none;
 	}
 
+	.intro-container {
+		max-width: 80%;
+		min-width: 300px;
+		height: 95vh;
+	}
+
 	.intro-subtitle {
-		font-size: 3vw;
+		font-size: 3.5vw;
 	}
 
 	.services-grid {
@@ -230,8 +393,12 @@ header {
 		grid-template-columns: 1fr 1fr;
 	}
 
+	.youtube-posts {
+		grid-template-columns: 1fr;
+	}
+
 	.team-container {
-		max-width: 70%;
+		max-width: 80%;
 	}
 
 	.team-grid {
@@ -242,26 +409,20 @@ header {
 		max-width: 80%;
 	}
 
+	.client-container {
+		max-width: 50%;
+	}
+
+	.client-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 4em;
+	}
+
+	.contact-us-container {
+		max-width: 100%;
+	}
+
 	.divider {
 		height: 100px;
 	}
-}
-
-.bg-darkaccent {
-	background-color: var(--clr-darkaccent);
-	color: var(--clr-white);
-}
-
-.bg-accent {
-	background-color: var(--clr-accent);
-	color: var(--clr-white);
-}
-
-.bg-white {
-	background-color: var(--clr-white);
-	color: var(--clr-darkaccent);
-}
-
-.text-center {
-	text-align: center;
 }
