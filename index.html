@@ -27,7 +27,7 @@
 		</nav>
 	</header>
 
-	<section id="home" class="container intro bg-darkaccent">
+	<section id="home" class="container intro bg-darkaccent"><section>
 		<div class="container intro-container">
 			<div></div>
 			<div class="intro-logo">
@@ -41,10 +41,10 @@
 				</a>
 			</div>
 		</div>
-	</section>
+	</section></section>
 
 	<div class="divider divider1"></div>
-	<section id="services" class="container services bg-white">
+	<section id="services" class="container services bg-white"><section>
 		<h2 class="section-title text-center">Our Services</h2>
 		<hr class="hr-darkaccent">
 		<div class="services-grid">
@@ -75,9 +75,9 @@
 				<p class="service-text">Birthday Party</p>
 			</div>
 		</div>
-	</section>
+	</section></section>
 
-	<section id="work" class="container work bg-darkaccent">
+	<section id="work" class="container work bg-darkaccent"><section>
 		<h2 class="section-title text-center">Our Work</h2>
 		<hr class="hr-white">
 		<p class="section-subtitle text-center">Here are some results of our work.</p>
@@ -92,7 +92,7 @@
 					<iframe class="iframe-youtube-post" src="https://www.youtube-nocookie.com/embed/v7Jj-l6wIEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="youtube-post hidden-sm">
-					<iframe class="iframe-youtube-post" src="https://www.youtube-nocookie.com/embed/iWNxBOM1Egk" frameborder="0" allow="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe class="iframe-youtube-post" src="https://www.youtube-nocookie.com/embed/iWNxBOM1Egk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="youtube-post hidden-sm">
 					<iframe class="iframe-youtube-post" src="https://www.youtube-nocookie.com/embed/r2irDS7mnng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -101,7 +101,7 @@
 					<iframe class="iframe-youtube-post" src="https://www.youtube-nocookie.com/embed/vaOXHP0zlVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 			</div>
-	</section>
+	</section></section>
 
 	<section id="team" class="container team bg-white">
 		<h2 class="section-title text-center">The Crew</h2>
@@ -164,13 +164,13 @@
 	</section>
 
 	<div class="divider divider2"></div>
-	<section id="about-us" class="container bg-accent">
+	<section id="about-us" class="container bg-accent"><section>
 		<div class="about-us">
 			<h2 class="section-title">About Us</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Iusto eius, distinctio accusamus. Quidem animi voluptatum nemo sit aspernatur placeat saepe quia, ratione qui impedit. Dicta laborum sed earum quia dolores. Laborum voluptatibus assumenda soluta velit, ipsum, exercitationem quidem recusandae iste consectetur obcaecati. Numquam harum dicta fugiat suscipit, explicabo quos. Dolores?</p>
 		</div>
 		
-	</section>
+	</section></section>
 
 	<section id="client" class="container client bg-accent">
 		<h2 class="section-title text-center">Clients</h2>
@@ -248,5 +248,23 @@
 		<div class=""><p class="copyright">&copy; Mellogang Visuals 2020</p></div>
 		<div class="text-right"><p class="copyright">Developed by Ananda Satria</p></div>
 	</footer>
+
+	<script>
+		let anchorlinks = document.querySelectorAll('a[href^="#"]');
+ 
+		for (let item of anchorlinks) { 
+			item.addEventListener('click', (e) => {
+				let hashval = item.getAttribute('href')
+				console.log(hashval);
+				let target = document.querySelector(hashval)
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				})
+				history.pushState(null, null, hashval)
+				e.preventDefault()
+			})
+		}
+	</script>
 </body>
 </html>
